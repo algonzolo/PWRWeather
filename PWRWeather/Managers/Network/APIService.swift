@@ -11,7 +11,7 @@ final class APIService {
     static let shared = APIService()
     
     static let baseURL = "https://api.weatherapi.com/v1/"
-    private let apiKey = Key.weatherAPIKey
+    private let apiKey = "fa8b3df74d4042b9aa7135114252304"
     
     private init() {}
     
