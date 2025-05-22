@@ -73,7 +73,7 @@ struct ContentView: View {
                         lowTemperature: Int(forecast.forecast.forecastday[0].day.mintemp_c),
                         isEditingLocation: $isEditingLocation
                     )
-                    .padding(.top, 15)
+                    .padding(.top, 30)
                     .padding(.bottom, 30)
                     
                     CurrentWeatherHourlyDataView(
@@ -139,7 +139,7 @@ struct ContentView: View {
                 // Проверяем, изменилась ли локация значительно (более чем на 1 км)
                 if let oldLocation = oldLocation {
                     let distance = newLocation.distance(from: oldLocation)
-                    if distance < 1000 { // 1 километр
+                    if distance < 1000 {
                         return
                     }
                 }
@@ -163,26 +163,28 @@ struct ContentView: View {
     }
     
     private func determineLocation() -> (Double, Double) {
-        // First try to get device location
+        // First check if we have a searched city location
+        if !forecastLocation.address.isEmpty {
+            return (forecastLocation.latitude, forecastLocation.longitude)
+        }
+        
+        // If no searched city, try device location
         if let deviceLat = deviceLocationManager.location?.coordinate.latitude,
            let deviceLon = deviceLocationManager.location?.coordinate.longitude {
             return (deviceLat, deviceLon)
         }
         
-        // If device location is not available, try saved location
-        let lastLocation = locationStorage.getLastLocation()
-        if let latitude = lastLocation.latitude, let longitude = lastLocation.longitude {
-            return (latitude, longitude)
-        }
+//        // If no device location, try saved location
+//        let lastLocation = locationStorage.getLastLocation()
+//        if let latitude = lastLocation.latitude, let longitude = lastLocation.longitude {
+//            return (latitude, longitude)
+//        }
         
-        // If neither device nor saved location is available, use forecast location or default
-        if !forecastLocation.address.isEmpty {
-            return (forecastLocation.latitude, forecastLocation.longitude)
-        } else {
-            return (55.751244, 37.618423) // Moscow location
-        }
+        // If nothing else is available, use default location
+        return (55.751244, 37.618423) // Moscow location
     }
     
+    //TODO: - Finish logic with storing location
     private func saveLocation() {
         locationStorage.saveLocation(latitude: forecastLocation.latitude, longitude: forecastLocation.longitude)
         print("Stored latitude: \(forecastLocation.latitude) and longitude: \(forecastLocation.longitude) locally.")
