@@ -10,7 +10,6 @@
 		1EA1B28D2DDF6B1C001F1E5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EA1B2892DDF6B1C001F1E5D /* Assets.xcassets */; };
 		1EA1B28E2DDF6B1C001F1E5D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA1B28A2DDF6B1C001F1E5D /* ContentView.swift */; };
 		1EA1B28F2DDF6B1C001F1E5D /* PWRWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA1B28B2DDF6B1C001F1E5D /* PWRWeatherApp.swift */; };
-		1EA1B2972DDF6E33001F1E5D /* ForecastLocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA1B2962DDF6E33001F1E5D /* ForecastLocationSearchView.swift */; };
 		1EA1B2992DDF6E52001F1E5D /* CurrentWeatherSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA1B2982DDF6E52001F1E5D /* CurrentWeatherSummaryView.swift */; };
 		1EA1B29B2DDF6EC3001F1E5D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA1B29A2DDF6EC3001F1E5D /* Utils.swift */; };
 		1EA1B29D2DDF6F1E001F1E5D /* CurrentWeatherHourlyDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA1B29C2DDF6F1E001F1E5D /* CurrentWeatherHourlyDataView.swift */; };
@@ -26,6 +25,7 @@
 		1EA1B2B82DDF7E1E001F1E5D /* Key.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1EA1B2B72DDF7E1E001F1E5D /* Key.xcconfig */; };
 		1EA1B2BA2DDF7E88001F1E5D /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA1B2B92DDF7E81001F1E5D /* Decoder.swift */; };
 		1EA1B2BD2DDF8B87001F1E5D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EA1B2BC2DDF8B87001F1E5D /* Launch Screen.storyboard */; };
+		1EA1B2C12DDF931A001F1E5D /* ForecastLocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA1B2C02DDF9318001F1E5D /* ForecastLocationSearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +33,6 @@
 		1EA1B2892DDF6B1C001F1E5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1EA1B28A2DDF6B1C001F1E5D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1EA1B28B2DDF6B1C001F1E5D /* PWRWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWRWeatherApp.swift; sourceTree = "<group>"; };
-		1EA1B2962DDF6E33001F1E5D /* ForecastLocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastLocationSearchView.swift; sourceTree = SOURCE_ROOT; };
 		1EA1B2982DDF6E52001F1E5D /* CurrentWeatherSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherSummaryView.swift; sourceTree = "<group>"; };
 		1EA1B29A2DDF6EC3001F1E5D /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		1EA1B29C2DDF6F1E001F1E5D /* CurrentWeatherHourlyDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherHourlyDataView.swift; sourceTree = "<group>"; };
@@ -50,6 +49,7 @@
 		1EA1B2B92DDF7E81001F1E5D /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
 		1EA1B2BB2DDF7FCD001F1E5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1EA1B2BC2DDF8B87001F1E5D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		1EA1B2C02DDF9318001F1E5D /* ForecastLocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastLocationSearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +91,7 @@
 		1EA1B28C2DDF6B1C001F1E5D /* PWRWeather */ = {
 			isa = PBXGroup;
 			children = (
+				1EA1B2BB2DDF7FCD001F1E5D /* Info.plist */,
 				1EA1B2882DDF6B04001F1E5D /* App */,
 				1EA1B2912DDF6DD7001F1E5D /* View */,
 				1EA1B2A02DDF6F5B001F1E5D /* ViewModel */,
@@ -104,7 +105,6 @@
 		1EA1B2902DDF6B3C001F1E5D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1EA1B2BB2DDF7FCD001F1E5D /* Info.plist */,
 				1EA1B2B92DDF7E81001F1E5D /* Decoder.swift */,
 				1EA1B2892DDF6B1C001F1E5D /* Assets.xcassets */,
 				1EA1B29A2DDF6EC3001F1E5D /* Utils.swift */,
@@ -117,7 +117,7 @@
 		1EA1B2912DDF6DD7001F1E5D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1EA1B2962DDF6E33001F1E5D /* ForecastLocationSearchView.swift */,
+				1EA1B2C02DDF9318001F1E5D /* ForecastLocationSearchView.swift */,
 				1EA1B2982DDF6E52001F1E5D /* CurrentWeatherSummaryView.swift */,
 				1EA1B29C2DDF6F1E001F1E5D /* CurrentWeatherHourlyDataView.swift */,
 				1EA1B29E2DDF6F3E001F1E5D /* UpcomingDailyForecastView.swift */,
@@ -263,11 +263,11 @@
 				1EA1B28F2DDF6B1C001F1E5D /* PWRWeatherApp.swift in Sources */,
 				1EA1B2B62DDF7238001F1E5D /* ForecastViewModel.swift in Sources */,
 				1EA1B2A22DDF6F8E001F1E5D /* ForecastLocationViewModel.swift in Sources */,
+				1EA1B2C12DDF931A001F1E5D /* ForecastLocationSearchView.swift in Sources */,
 				1EA1B29F2DDF6F3E001F1E5D /* UpcomingDailyForecastView.swift in Sources */,
 				1EA1B2AD2DDF7088001F1E5D /* APIError.swift in Sources */,
 				1EA1B2B42DDF71AD001F1E5D /* LocationStorage.swift in Sources */,
 				1EA1B2BA2DDF7E88001F1E5D /* Decoder.swift in Sources */,
-				1EA1B2972DDF6E33001F1E5D /* ForecastLocationSearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
