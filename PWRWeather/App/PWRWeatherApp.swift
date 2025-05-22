@@ -8,10 +8,11 @@
 import SwiftUI
 
 @main
-struct PWRWeatherApp: App {
+struct WeatherNowApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(DeviceLocationManager())
         }
     }
 }
