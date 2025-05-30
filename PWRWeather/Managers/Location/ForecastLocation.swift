@@ -25,7 +25,7 @@ struct ForecastLocation: Identifiable, Equatable {
         var cityAndState = ""
         var address = ""
         
-        cityAndState = placemark.locality ?? ""             // locality = city
+        cityAndState = placemark.locality ?? ""            // locality = city
         if let state = placemark.administrativeArea {       // administrativeArea = state
             cityAndState = cityAndState.isEmpty ? state : "\(cityAndState), \(state)"
         }

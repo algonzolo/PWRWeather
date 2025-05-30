@@ -48,6 +48,9 @@ struct ForecastDay: Codable {
 struct Day: Codable {
     let maxtemp_c: Double
     let mintemp_c: Double
+    let avgtemp_c: Double
+    let avghumidity: Int
+    let maxwind_kph: Double
     let condition: Condition
 }
 

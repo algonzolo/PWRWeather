@@ -11,6 +11,7 @@ struct CurrentWeatherSummaryView: View {
     var cityName: String
     var currentTemperature: Int
     var weatherDescription: String
+    var icon: String
     var highTemperature: Int
     var lowTemperature: Int
     
@@ -48,12 +49,25 @@ struct CurrentWeatherSummaryView: View {
                     .offset(x: degreeSymbolOffsetX(for: currentTemperature), y: -4)
             }
             
-            Text(weatherDescription)
-                .font(.system(size: 18))
-                .fontWeight(.medium)
-                .shadow(radius: 2.0)
-                .foregroundColor(.white)
-                .shadow(radius: 2.0)
+            .padding(.bottom, -20)
+            
+            HStack(spacing: 2) {
+                AsyncImage(url: URL(string: "https:" + (icon))) { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                } placeholder: {
+                    ProgressView()
+                }
+                .frame(width: 45, height: 45)
+                
+                Text(weatherDescription)
+                    .font(.system(size: 18))
+                    .fontWeight(.medium)
+                    .shadow(radius: 2.0)
+                    .foregroundColor(.white)
+                    .shadow(radius: 2.0)
+            }
             
             Text("Max:\(highTemperature)° Min:\(lowTemperature)°")
                 .font(.system(size: 18))

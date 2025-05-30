@@ -11,7 +11,7 @@ import SwiftUI
 struct WeatherNowApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ForecastView()
                 .environmentObject(DeviceLocationManager())
         }
     }

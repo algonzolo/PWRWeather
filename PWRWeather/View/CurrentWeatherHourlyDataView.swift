@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct CurrentWeatherHourlyDataView: View {
+    var description: String
     var hourlyData: [(id: UUID, time: String, icon: String, temperature: Int)]
     
     var body: some View {
         VStack(alignment: .leading) {
-            (Text(Image(systemName: "clock.fill")) + Text("  Hourly Forecast".uppercased()))
-                .font(.system(size: 12))
+            Text(description)
+                .font(.system(size: 14))
                 .fontWeight(.medium)
-                .foregroundColor(.white.opacity(0.6))
+                .foregroundColor(.white)
+                .shadow(radius: 2.0)
+                .padding(.bottom, 6)
             
             Divider()
                 .overlay(Color.white)

@@ -22,10 +22,8 @@ class DeviceLocationManager: NSObject, ObservableObject {
         deviceLocationManager.distanceFilter = 1000
         deviceLocationManager.delegate = self
         
-        // Проверяем текущий статус авторизации
         authorizationStatus = deviceLocationManager.authorizationStatus
         
-        // Запрашиваем разрешение только если оно еще не определено
         if authorizationStatus == .notDetermined {
             deviceLocationManager.requestWhenInUseAuthorization()
         } else if authorizationStatus == .authorizedWhenInUse || authorizationStatus == .authorizedAlways {

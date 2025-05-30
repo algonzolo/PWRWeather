@@ -18,14 +18,15 @@ struct ForecastLocationSearchView: View {
     @Binding var isEditingLocation: Bool
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             List(forecastLocationViewModel.forecastLocations) { location in
-                VStack{
+                VStack {
                     Text(location.name)
                         .font(.title2)
                     Text(location.address)
                         .font(.callout)
-                }.onTapGesture {
+                }
+                .onTapGesture {
                     forecastLocation = location
                     isEditingLocation.toggle()
                     dismiss()
@@ -33,19 +34,17 @@ struct ForecastLocationSearchView: View {
             }
             .listStyle(.plain)
             .searchable(text: $searchText)
-            .onChange(of: searchText) { oldValue, newValue in
+            .onChange(of: searchText) { newValue in
                 if !newValue.isEmpty {
                     forecastLocationViewModel.search(text: newValue, region: locationManager.region)
                 }
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Dismiss") {
-                        isEditingLocation.toggle()
-                        dismiss()
-                    }
-                }
+            .navigationBarItems(trailing:
+                                    Button("Dismiss") {
+                isEditingLocation.toggle()
+                dismiss()
             }
+            )
         }
     }
 }
